@@ -1,6 +1,11 @@
 function Promo(prop) {
+    const promo = {
+        padding: "20px",
+        border: "1px solid gray",
+    }
     return (
-        <div className="promo-section">
+        
+        <div className="promo-section" style={promo}>
             <div>
                 <h1>Don't miss this deal!</h1>
             </div>

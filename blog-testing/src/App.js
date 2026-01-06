@@ -1,4 +1,5 @@
 import blog from './blog.png';
+import './App.css';
 function App() {
 
   return (
@@ -7,8 +8,9 @@ function App() {
      <img src={blog} className="blog-logo" alt="logo"/>
      <a
         className="Blog-link"
-        href="https://drive.google.com/file/d/1yLcbomX8iGfkw_2wvPvBCQNxFkCzSVhE/view"
+        href="./Nav.js"
         target="_blank"
+        rel="noopener noreferrer"
         >
           <h1>Welcome to my blog testing!</h1>
         </a>

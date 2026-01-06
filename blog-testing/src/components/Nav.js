@@ -2,13 +2,10 @@ function Nav(props) {
     return (
         <nav className="main-nav">
             <ul>
-                <li>
-                <a href="./Nav.js">Home</a>
-                {props.home}
-                </li>
-                <li>{props.articles}</li>
-                <li>{props.about}</li>
-                <li>{props.contact}</li>
+                <li>Home</li>
+                <li>{props.articles}Articles</li>
+                <li>{props.about}About</li>
+                <li>{props.contact}Contact</li>
             </ul>
         </nav>
     );
