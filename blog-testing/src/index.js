@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Nav from './components/Nav';
 import Promo from './components/Promo';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <App />
     <Nav />
     <Promo />
+    <Footer />
   </React.StrictMode>
 );
 
