@@ -1,6 +1,7 @@
 import blog from './blog.png';
 import './App.css';
 import Btn from './components/Btn';
+import Articles from './ui/Articles';
 
 function App() {
 
@@ -14,10 +15,11 @@ function App() {
         target="_blank"
         rel="noopener noreferrer"
         >
-          <h1>Welcome to my blog testing!</h1>
+          <h1>Welcome to my Blog Testing!</h1>
         </a>
      </header>
       <Btn />
+      <Articles />  
     </div>
   );
 }
