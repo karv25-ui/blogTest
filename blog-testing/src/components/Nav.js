@@ -10,6 +10,7 @@ function Nav(props) {
                 <li><a href="/contact">Contact</a></li>
                 {/* Additional navigation items can be added here */}
             </ul>
+        
         </nav>
     );
 };

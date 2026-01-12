@@ -1,5 +1,6 @@
 import blog from './blog.png';
 import './App.css';
+import Btn from './components/Btn';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
           <h1>Welcome to my blog testing!</h1>
         </a>
      </header>
-     
+      <Btn />
     </div>
   );
 }
