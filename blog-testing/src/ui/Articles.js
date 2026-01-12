@@ -2,9 +2,9 @@ import Intro1 from '../components/Intro1';
 import Intro2 from '../components/Intro2';
 import Intro3 from '../components/Intro3';
 
-function Articles() {
+function Articles(props) {
     return (
-        <section className="articles">
+        <section className={props.className}>
             {/* Other article components can be added here (each article directs to a specific page) */}
            <Intro1 />
             <Intro2 />

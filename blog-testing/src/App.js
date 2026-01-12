@@ -2,6 +2,7 @@ import blog from './blog.png';
 import './App.css';
 import Btn from './components/Btn';
 import Articles from './ui/Articles';
+import ModeToggler from './ModeToggler';
 
 function App() {
 
@@ -19,7 +20,9 @@ function App() {
         </a>
      </header>
       <Btn />
-      <Articles />  
+      <Articles className="blog-articles"
+      /> 
+      <ModeToggler /> 
     </div>
   );
 }
