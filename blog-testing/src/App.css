@@ -1,3 +1,4 @@
+/* Blog Styles */
 .Blog {
   text-align: center;
 }
@@ -36,7 +37,113 @@
     transform: rotate(360deg);
   }
 }
-
+/* Promo Section Styles */
 .promo-section {
   text-align: center;
 }
+
+/* Light Switch Styles */
+.light-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Bulb styles */
+.bulb {
+ position: relative;
+ margin-bottom: 40px;
+}
+
+.bulb-glass {
+
+  width: 120px;
+  height: 160px;
+  border-radius: 60%, 60%, 50%, 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-shadow: none;
+  animation: spin 4s linear infinite;
+}
+
+/*Glass shine effect*/
+.bulb-glass::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 30px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  transform: rotate(-20deg);
+}
+
+/* Base of the bulb */
+.bulb-base {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 5px;
+  margin-top: -10px;
+}
+
+/* Light on state */
+.bulb.on .bulb-glass {
+  background-color: #ffeb3b;
+  box-shadow: 0 0 20px #ffeb3b;
+}
+
+/* Light off state */
+.bulb.off .bulb-glass {
+  background-color: #555;
+  box-shadow: none;
+}   
+
+/* Button styles */
+.light-switch button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+} 
+
+/* Room styles */
+.room {
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+
+.room.dark {
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+}
+
+.room.lit {
+  background: radial-gradient(circle at center, #fff 0%, #ccc 70%);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

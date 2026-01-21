@@ -5,7 +5,8 @@ import Intro3 from '../components/Intro3';
 function Articles(props) {
     return (
         <section className={props.className}>
-            {/* Other article components can be added here (each article directs to a specific page) */}
+            {/* Other article components can be added here 
+            (each article directs to a specific page) */}
            <Intro1 />
             <Intro2 />
             <Intro3 />

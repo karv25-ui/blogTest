@@ -24,7 +24,8 @@ function App() {
       <Articles className="blog-articles"
       /> 
       <ModeToggler /> 
-      <LightSwitch />
+      <LightSwitch LightSwitch={LightSwitch}
+       />
     </div>
   );
 }
