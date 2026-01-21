@@ -12,7 +12,10 @@ root.render(
   <React.StrictMode>
     <App />
     <Nav />
-    <Promo />
+    <Promo
+    heading="Don't miss this deal!"
+    subheading="Subscribe to my newsletter and get all the shop items at 50% off!"
+     />
     <Footer />
   </React.StrictMode>
 );
