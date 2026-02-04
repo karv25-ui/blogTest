@@ -10,22 +10,20 @@ function App() {
   return (
     <div className="Blog">
       <header className="Blog-header">
-     <img src={blog} className="blog-logo" alt="logo"/>
-     <a
-        className="Blog-link"
-        href="./Nav.js"
-        target="_blank"
-        rel="noopener noreferrer"
+        <img src={blog} className="blog-logo" alt="logo" />
+        <a
+          className="Blog-link"
+          href="./Nav.js"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h1>Welcome to my Blog Testing!</h1>
         </a>
-     </header>
+      </header>
       <Btn />
-      <Articles className="blog-articles"
-      /> 
-      <ModeToggler /> 
-      <LightSwitch LightSwitch={LightSwitch}
-       />
+      <Articles className="blog-articles" />
+      <ModeToggler />
+      <LightSwitch LightSwitch={LightSwitch} />
     </div>
   );
 }
