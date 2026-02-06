@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Nav from './components/Nav';
 import Promo from './components/Promo';
 import Footer from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <App />
-    <Nav />
     <Promo
     heading="Don't miss this deal!"
     subheading="Subscribe to my newsletter and get all the shop items at 50% off!"
