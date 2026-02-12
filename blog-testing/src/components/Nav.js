@@ -9,17 +9,17 @@ function Nav(props) {
     return (
         <navbar className="main-nav">
             {/* Navigation bar for the blog application */} 
-            <ul>
+            <tr>
                 {/* Navigation links (Each link directs to a specific page) */}
-                <li><Link to="/">Back to Home</Link></li>
-                <li><Link to="/articles">Articles</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <td><Link to="/App">Back to Home</Link></td>
+                <td><Link to="/articles">Articles</Link></td>
+                <td><Link to="/about">About</Link></td>
+                <td><Link to="/contact">Contact</Link></td>
                 {/* Additional navigation items can be added here */}
-            </ul>
+            </tr>
             <Routes>
                 {/* Define routes for the navigation links */}
-                
+                <Route path="/App" element={<App />} />
                
                 {/* Additional routes can be defined here */}
             </Routes>

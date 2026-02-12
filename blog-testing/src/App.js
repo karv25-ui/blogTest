@@ -11,6 +11,27 @@ function App() {
   const navigate = useNavigate();
   navigate('/Nav');
 
+  const time = new Date();
+  const day = time.toLocaleString("en-US", { weekday: "long" }); 
+  const morning = time.getHours() >= 6 && time.getHours() < 12;
+  const afternoon = time.getHours() >= 12 && time.getHours() < 18;
+  const evening = time.getHours() >= 18 && time.getHours() < 24;
+  let dayMessage;
+
+  if (day.toLowerCase() === "monday") {
+    dayMessage = `Happy ${day}! Start your week off with a smile!`;
+  } else if (day.toLowerCase() === "tuesday") {
+    dayMessage = `It's ${day}! Keep going, you're doing great!`;
+  } else if (day.toLowerCase() === "wednesday") {
+    dayMessage = `Happy ${day}! You're halfway through the week!`;
+  } else if (day.toLowerCase() === "thursday") {
+    dayMessage = `It's ${day}! The weekend is almost here!`;
+  } else if (day.toLowerCase() === "friday") {
+    dayMessage = `Happy ${day}! The weekend is finally here!`;
+  } else {
+    dayMessage = `It's ${day}! Have a great day!`;
+  };
+
   return (
     <>
     <div className="Blog">
@@ -18,19 +39,19 @@ function App() {
         <img src={blog} className="blog-logo" alt="logo" />
         <a
           className="Blog-link"
-          href="./Nav.js"
+          href="./Nav"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h1>Welcome to my Blog Testing!</h1>
-        </a>
-      </header>
-      <nav>
-        <Link to="/Nav">Go to Nav</Link>
+          {/*<Link className="Blog-link" to="/Nav"><h1>Welcome to my Blog Testing!</h1></Link>.*/}
+          </a>
+        <h1>{dayMessage}</h1>
+        <h2>{morning ? "Good morning!" : afternoon ? "Good afternoon!" : evening ? "Good evening!" : "Hello!"}</h2>
+         <Link to="/Nav">Go to Nav</Link>
         <Routes>
           <Route path="/Nav" element={<Nav />} />
         </Routes>
-        </nav>
+      </header>
       <Btn />
       <ModeToggler />
       <LightSwitch LightSwitch={LightSwitch} />
