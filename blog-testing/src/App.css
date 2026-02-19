@@ -109,7 +109,12 @@
   cursor: pointer;
 } 
 
-/* Room styles */
+.main-nav {
+  text-decoration: solid;
+  text-align: center;
+}
+
+/* Room styles 
 .room {
   min-height: 100vh;
   display: flex; 
@@ -146,4 +151,4 @@
     transform: rotate(360deg);
   }
 }
-
+*/

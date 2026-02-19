@@ -4,12 +4,11 @@ import Btn from './components/Btn';
 import ModeToggler from './ModeToggler';
 import LightSwitch from './LightSwitch';
 import Nav from './components/Nav';
-import { Route, Routes, Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Route, Routes, Link, /*useNavigate*/ } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
-  const navigate = useNavigate();
-  navigate('/Nav');
+ /* const navigate = useNavigate(); // Hook to programmatically navigate to different routes */
 
   const time = new Date();
   const day = time.toLocaleString("en-US", { weekday: "long" }); 
@@ -45,16 +44,22 @@ function App() {
         >
           {/*<Link className="Blog-link" to="/Nav"><h1>Welcome to my Blog Testing!</h1></Link>.*/}
           </a>
-        <h1>{dayMessage}</h1>
-        <h2>{morning ? "Good morning!" : afternoon ? "Good afternoon!" : evening ? "Good evening!" : "Hello!"}</h2>
-         <Link to="/Nav">Go to Nav</Link>
-        <Routes>
-          <Route path="/Nav" element={<Nav />} />
-        </Routes>
+       <h1>{dayMessage}</h1>
+        <h2>{morning ? "Great Day!" : afternoon ? "Good afternoon!" : evening ? "Good evening!" : "Hello!"}</h2>
+        <h3>Scroll for more content!</h3>
       </header>
-      <Btn />
+         <Link to="/Nav/*"><h1>Welcome to my Blog Testing!</h1></Link>
+         <Link to="/Home">Go to Home Page</Link>
+        <Routes>
+          <Route path="/Nav/*" element={<Nav />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
+        {/*<button onClick={() => navigate('/Nav/*')}>Go to Navigation</button>*/}
+      <div>
+        <Btn />
       <ModeToggler />
-      <LightSwitch LightSwitch={LightSwitch} />
+      <LightSwitch />
+      </div>
     </div>
         </>
   );

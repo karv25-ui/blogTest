@@ -8,7 +8,7 @@ function LightSwitch () {
     }
 
     return (
-        <div className={`room ${lightOn ? 'light-on' : 'light-off'}`}>
+        <div className={lightOn ? 'light-on' : 'light-off'}>
     <div className="light-switch">
    <div className={`bulb ${lightOn ? 'on' : 'off'}`}>
     <div className="bulb-filament"></div>
