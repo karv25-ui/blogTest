@@ -3,7 +3,7 @@ import './App.css';
 import Btn from './components/Btn';
 import ModeToggler from './ModeToggler';
 import LightSwitch from './LightSwitch';
-import Nav from './components/Nav';
+/*import Nav from './components/Nav';*/
 import { Route, Routes, Link, /*useNavigate*/ } from 'react-router-dom';
 import Home from './components/Home';
 
@@ -48,11 +48,13 @@ function App() {
         <h2>{morning ? "Great Day!" : afternoon ? "Good afternoon!" : evening ? "Good evening!" : "Hello!"}</h2>
         <h3>Scroll for more content!</h3>
       </header>
-         <Link to="/Nav/*"><h1>Welcome to my Blog Testing!</h1></Link>
-         <Link to="/Home">Go to Home Page</Link>
+         <Link to="/"><h1>Welcome to the Blog</h1></Link>
+         {/*<Link to="/Nav/*"><h1>Welcome to my Blog Testing!</h1></Link>*/}
+         
         <Routes>
-          <Route path="/Nav/*" element={<Nav />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} /> 
+          {/*<Route path="/Nav/*" element={<Nav />} />*/}
+          
         </Routes>
         {/*<button onClick={() => navigate('/Nav/*')}>Go to Navigation</button>*/}
       <div>
