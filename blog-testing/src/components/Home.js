@@ -22,13 +22,13 @@ export default function Home() {
         */}
         <Link to="/Home"><h3>Home</h3></Link>
         <Link to="/About"><h3>About</h3></Link>
-        <Link to="/Articles"><h3>Articles</h3></Link>
+        <Link to="../ui/Articles"><h3>Articles</h3></Link>
         <Link to="/Contact"><h3>Contact</h3></Link>
 
         <Routes>
           <Route path="/Home" element={<h1>Welcome to the Home Page!</h1>} />
           <Route path="/About" element={<About />} />
-          <Route path="/Articles" element={<Articles />} />
+          <Route path="../ui/Articles" element={<Articles />} />
           <Route path="/Contact" element={<h1>Get in touch with us on the Contact page.</h1>} />
         </Routes>
         </>

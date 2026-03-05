@@ -36,14 +36,7 @@ function App() {
     <div className="Blog">
       <header className="Blog-header">
         <img src={blog} className="blog-logo" alt="logo" />
-        <a
-          className="Blog-link"
-          href="./Nav"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
           {/*<Link className="Blog-link" to="/Nav"><h1>Welcome to my Blog Testing!</h1></Link>.*/}
-          </a>
        <h1>{dayMessage}</h1>
         <h2>{morning ? "Great Day!" : afternoon ? "Good afternoon!" : evening ? "Good evening!" : "Hello!"}</h2>
         <h3>Scroll for more content!</h3>

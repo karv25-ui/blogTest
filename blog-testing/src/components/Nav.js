@@ -13,7 +13,7 @@ function Nav() {
             <ul className="nav-list">
                 {/* Navigation links (Each link directs to a specific page) */}
                 <li><Link to="/">Back to Home</Link></li>
-                <li><Link to="/articles">Articles</Link></li>
+                <li><Link to="../ui/Articles">Articles</Link></li>
                 <li><Link to="/About">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 {/* Additional navigation items can be added here */}
@@ -22,6 +22,7 @@ function Nav() {
                 {/* Define routes for the navigation links */}
                 <Route path="/" />
                 <Route path="/About" element={<About />} />
+                <Route path="../ui/Articles" element={<Articles />} />
                
                 {/* Additional routes can be defined here */}
             </Routes>
