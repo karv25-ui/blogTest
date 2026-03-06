@@ -42,10 +42,12 @@ function App() {
         <h3>Scroll for more content!</h3>
       </header>
          <Link to="/"><h1>Welcome to the Blog</h1></Link>
+         <Link to="/Home"><h1>Home</h1></Link>
          {/*<Link to="/Nav/*"><h1>Welcome to my Blog Testing!</h1></Link>*/}
          
         <Routes>
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} /> 
           {/*<Route path="/Nav/*" element={<Nav />} />*/}
           
         </Routes>

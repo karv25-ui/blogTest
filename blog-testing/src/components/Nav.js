@@ -1,6 +1,7 @@
 import { Route, Routes, Link } from 'react-router-dom';
 /*import { useNavigate } from 'react-router-dom'; */
 import About from './About.js';
+import Articles from '../ui/Articles.js';
 
 function Nav() {
   /* const navigate = useNavigate(); // Hook to programmatically navigate to different routes
@@ -39,4 +40,9 @@ export default Nav;
     - Ensure that the routes defined in the `Routes` component match the actual paths used in the application.
     - The useNavigate hook wasn't used properly initially, the way I was implementing it would cause an infinite loop of navigation. 
     It should be used inside an event handler or a useEffect hook to avoid this issue.
+    - I set up my syntax so that I can easily route to the Articles & About pages, but it feels like theres something missing. I may need to adjust the paths or the way I'm structuring my routes to ensure that they work correctly with the navigation links.
+    - I should also consider adding error handling for undefined routes (e.g., a 404 page) to improve the user experience when navigating to non-existent pages.
+    - Overall, the Nav component is a crucial part of the application's navigation structure, and it's important to ensure that it is implemented correctly to provide a seamless user experience.
+    - Once this gets resolved, I can move on to implementing the Contact page and any additional features or pages that are needed for the blog application.
+    - Not sure what I can do to make this work, but I will continue to troubleshoot and seek guidance as needed to ensure that the navigation functionality is working as intended.
 */
