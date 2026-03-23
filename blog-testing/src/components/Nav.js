@@ -1,38 +1,40 @@
-import { Route, Routes, Link } from 'react-router-dom';
-/*import { useNavigate } from 'react-router-dom'; */
-import About from './About.js';
-import Articles from '../ui/Articles.js';
+import { Link, useLocation } from 'react-router-dom';
 
 function Nav() {
-  /* const navigate = useNavigate(); // Hook to programmatically navigate to different routes
-    navigate('/App'); // Navigate to the '/App' route when the component is rendered // Note: This will cause a navigation to '/App' every time this component is rendered, which may not be the intended behavior. Consider using this inside an event handler or useEffect hook instead.
-    */
-  
+  const location = useLocation();
+
+  // Helper to highlight the active link
+  const isActive = (path) => location.pathname === path;
+
   return (
-        <nav className="main-nav">
-            {/* Navigation bar for the blog application */} 
-            <ul className="nav-list">
-                {/* Navigation links (Each link directs to a specific page) */}
-                <li><Link to="/">Back to Home</Link></li>
-                <li><Link to="../ui/Articles">Articles</Link></li>
-                <li><Link to="/About">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                {/* Additional navigation items can be added here */}
-            </ul>
-            <Routes>
-                {/* Define routes for the navigation links */}
-                <Route path="/" />
-                <Route path="/About" element={<About />} />
-                <Route path="../ui/Articles" element={<Articles />} />
-               
-                {/* Additional routes can be defined here */}
-            </Routes>
-        </nav>
-    );
-};
+    <nav className="main-nav">
+      <ul className="nav-list">
+        <li>
+          <Link to="/" className={isActive('/') ? 'active' : ''}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/articles" className={isActive('/articles') ? 'active' : ''}>
+            Articles
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className={isActive('/about') ? 'active' : ''}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 export default Nav;
-
 /*
     Important Notes/Comments:
     - I may be missing some context about how this Nav component is integrated into the larger application.
@@ -45,4 +47,6 @@ export default Nav;
     - Overall, the Nav component is a crucial part of the application's navigation structure, and it's important to ensure that it is implemented correctly to provide a seamless user experience.
     - Once this gets resolved, I can move on to implementing the Contact page and any additional features or pages that are needed for the blog application.
     - Not sure what I can do to make this work, but I will continue to troubleshoot and seek guidance as needed to ensure that the navigation functionality is working as intended.
+    - I'm looking at the inspect developer tools to see if there are any errors or issues with the routing that could be causing the navigation to not work properly. I will also check the console for any error messages that might provide clues about what is going wrong.
+    It states that the path is not found & also the route is not matched, which suggests that there may be an issue with how the routes are defined or how the navigation links are structured. I will review the code to ensure that the paths in the `Link` components match the paths defined in the `Route` components, and that there are no typos or mismatches that could be causing the routing to fail.
 */

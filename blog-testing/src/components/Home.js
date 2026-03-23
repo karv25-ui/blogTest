@@ -6,6 +6,9 @@ import Articles from '../ui/Articles';
 export default function Home() {
     return (
         <>
+        <div>
+          
+        </div>
         {/*
         <NavLink to="/Home" className={({ isActive }) => (isActive ? 'active' : '')}>
           Home
