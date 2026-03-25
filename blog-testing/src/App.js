@@ -8,6 +8,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Articles from './ui/Articles';
 import { Route, Routes } from 'react-router-dom';
+import NavMenu  from './components/NavItems'
 
 function App() {
   const time = new Date();
@@ -38,6 +39,7 @@ function App() {
       </header>
 
   <Nav />
+  <NavMenu />
 
       {/* ✅ All routes defined in ONE place */}
       <Routes>

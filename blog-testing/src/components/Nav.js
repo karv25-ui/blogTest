@@ -1,10 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 
+
 function Nav() {
   const location = useLocation();
 
   // Helper to highlight the active link
   const isActive = (path) => location.pathname === path;
+
+ 
 
   return (
     <nav className="main-nav">

@@ -1,4 +1,4 @@
-import { useState, useEffect, UseRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const NavItems = [
     {
@@ -10,11 +10,11 @@ const NavItems = [
         ],
     }
 ];
-const styles = {/* 
+const styles = `
     body {
     font-family: 'DM SAns', sans-serif;
     background: var(--bg);
-    color: var (--text);
+    color: var(--text);
     min-height: 100vh;
 }
     
@@ -248,11 +248,9 @@ const styles = {/*
   }
  
   .mob-cta button { flex: 1; justify-content: center; }
- 
-
-    }
+`;
     
-*/}
+
 
 export default function NavMenu () {
     const[activeDropdown, setActiveDropdown] = useState(null);
@@ -278,12 +276,100 @@ useEffect (() => {
 }, []);
 
 const handleMouseEnter = (label) => {
-    clearTimeout(close.Timer.current);
+    clearTimeout(closeTimer.current);
     setActiveDropdown(label);
 };
 
 const handleMouseLeave = () => {
     closeTimer.current = setTimeout(() => setActiveDropdown(null), 120);
 };
+
+ return (
+    <>
+      <style>{styles}</style>
+ 
+      <div className="nav-wrap" ref={navRef}>
+        <nav className={`nav-inner ${scrolled ? "scrolled" : ""}`}>
+          {/* Desktop Links */}
+          <ul className="nav-links" style={{ listStyle: "none" }}>
+            {NavItems.map((item) => (
+              <li
+                key={item.label}
+                className="nav-item"
+                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`nav-btn ${activeDropdown === item.label ? "active" : ""}`}
+                  onClick={() =>
+                    item.dropdown
+                      ? setActiveDropdown(activeDropdown === item.label ? null : item.label)
+                      : null
+                  }
+                >
+                  {item.label}
+                  {item.dropdown && <span className="chevron">▾</span>}
+                </button>
+ 
+                {item.dropdown && (
+                  <div className={`dropdown ${activeDropdown === item.label ? "open" : ""}`}>
+                    {item.dropdown.map((sub) => (
+                      <a href="#" className="dropdown-item" key={sub.label}>
+                        <div className="dd-icon">{sub.icon}</div>
+                        <div>
+                          <div className="dd-label">{sub.label}</div>
+                          <div className="dd-desc">{sub.desc}</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <div className="nav-cta">
+            <button className="btn-ghost">Log in</button>
+            <button className="btn-primary">Get started →</button>
+          </div>
+ 
+          {/* Hamburger */}
+          <button
+            className={`hamburger ${mobileOpen ? "open" : ""}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+  <span /><span /><span />
+</button>
+      </nav>
+
+{/* Mobile Menu */}
+        <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
+          {NavItems.map((item) => (
+            <div key={item.label} className="mob-section">
+              {item.dropdown ? (
+                <>
+                  <div className="mob-header">{item.label}</div>
+                  {item.dropdown.map((sub) => (
+                    <a href="#" className="mob-link" key={sub.label}>
+                      <span>{sub.icon}</span> {sub.label}
+                    </a>
+                  ))}
+                </>
+              ) : (
+                <a href="#" className="mob-link">{item.label}</a>
+              )}
+            </div>
+          ))}
+          <div className="mob-divider" />
+          <div className="mob-cta">
+            <button className="btn-ghost">Log in</button>
+            <button className="btn-primary">Get started →</button>
+        </div>
+      </div>
+    </div>
+  </>
+);
 
 }
