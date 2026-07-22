@@ -3,6 +3,7 @@ import './App.css';
 import Btn from './components/Btn';
 import Articles from './ui/Articles';
 import ModeToggler from './ModeToggler';
+import LightSwitch from './LightSwitch';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Articles className="blog-articles"
       /> 
       <ModeToggler /> 
+      <LightSwitch />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import { state } from react;
+import { useState } from 'react';
 
 function LightSwitch() {
-const [lightOn, setLightOn] = React.useState(false);
+  const [lightOn, setLightOn] = useState(false);
 
 function handleClick() {
     setLightOn(true);
@@ -12,6 +12,14 @@ function handleClick() {
 
 return (
 <div> 
-    <button onClick={toggleLight}
-</div> 
-);
+    <p>{lightOn ? 'ON' : 'OFF'}</p>
+    <button onClick={toggleLight}>
+    Toggle Light 
+    </button>
+    <button onClick={handleClick}>
+        Turn ON
+    </button>
+    </div> 
+);}
+
+export default LightSwitch;
